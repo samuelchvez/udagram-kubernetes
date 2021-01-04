@@ -1,0 +1,12 @@
+[submodule "udagram-users"]
+	path = udagram-users
+	url = git@github.com:samuelchvez/udagram-users.git
+[submodule "udagram-feed"]
+	path = udagram-feed
+	url = git@github.com:samuelchvez/udagram-feed.git
+[submodule "udagram-api-gateway"]
+	path = udagram-api-gateway
+	url = git@github.com:samuelchvez/udagram-api-gateway.git
+[submodule "udagram-frontend"]
+	path = udagram-frontend
+	url = git@github.com:samuelchvez/udagram-frontend.git

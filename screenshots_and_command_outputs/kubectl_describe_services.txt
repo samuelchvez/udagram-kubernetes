@@ -1,0 +1,75 @@
+Name:              kubernetes
+Namespace:         default
+Labels:            component=apiserver
+                   provider=kubernetes
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP:                10.100.0.1
+Port:              https  443/TCP
+TargetPort:        443/TCP
+Endpoints:         192.168.103.220:443,192.168.181.5:443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:                     udagram-api-gateway-svc
+Namespace:                default
+Labels:                   service=udagram-api-gateway
+Annotations:              <none>
+Selector:                 app=udagram-api-gateway
+Type:                     LoadBalancer
+IP:                       10.100.53.8
+LoadBalancer Ingress:     ad87fe3d868344203b0b425904bc25bc-1084577570.us-east-2.elb.amazonaws.com
+Port:                     8080  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 8080  30267/TCP
+Endpoints:                192.168.34.36:8080
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+
+Name:              udagram-feed-svc
+Namespace:         default
+Labels:            app=udagram-feed
+Annotations:       <none>
+Selector:          app=udagram-feed
+Type:              ClusterIP
+IP:                10.100.31.152
+Port:              <unset>  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         192.168.34.72:8080,192.168.37.106:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:                     udagram-frontend-svc
+Namespace:                default
+Labels:                   service=udagram-frontend
+Annotations:              <none>
+Selector:                 app=udagram-frontend
+Type:                     LoadBalancer
+IP:                       10.100.238.218
+LoadBalancer Ingress:     a590310af38f54fbda9548ff3b74e8bb-1856065792.us-east-2.elb.amazonaws.com
+Port:                     80  80/TCP
+TargetPort:               80/TCP
+NodePort:                 80  30041/TCP
+Endpoints:                192.168.186.170:80
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+
+Name:              udagram-users-svc
+Namespace:         default
+Labels:            app=udagram-users
+Annotations:       <none>
+Selector:          app=udagram-users
+Type:              ClusterIP
+IP:                10.100.11.135
+Port:              <unset>  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         192.168.190.214:8080,192.168.48.169:8080
+Session Affinity:  None
+Events:            <none>

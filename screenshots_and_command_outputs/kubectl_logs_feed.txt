@@ -1,0 +1,30 @@
+
+> udagram-api@2.0.0 dev /usr/src/app
+> ts-node-dev --respawn --transpileOnly ./src/server.ts
+
+Using ts-node version 8.0.3, typescript version 3.3.4000
+Executing (default): CREATE TABLE IF NOT EXISTS "FeedItem" ("id"   SERIAL , "caption" VARCHAR(255), "url" VARCHAR(255), "createdAt" TIMESTAMP WITH TIME ZONE, "updatedAt" TIMESTAMP WITH TIME ZONE, PRIMARY KEY ("id"));
+Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'FeedItem' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+server running *
+press CTRL+C to stop server
+START - GET - 1/3/2021, 10:29:20 PM - 8d25d6ed-b39d-45d3-9242-147077178519 - /feed
+Executing (default): SELECT count(*) AS "count" FROM "FeedItem" AS "FeedItem";
+Executing (default): SELECT "id", "caption", "url", "createdAt", "updatedAt" FROM "FeedItem" AS "FeedItem" ORDER BY "FeedItem"."id" DESC;
+END - GET - 1/3/2021, 10:29:20 PM - 8d25d6ed-b39d-45d3-9242-147077178519 - /feed
+START - GET - 1/3/2021, 10:29:49 PM - f617318b-936f-40b5-86d0-43158497e6a0 - /feed/signed-url/IMG_20200614_122540.jpg
+END - GET - 1/3/2021, 10:29:49 PM - f617318b-936f-40b5-86d0-43158497e6a0 - /feed/signed-url/IMG_20200614_122540.jpg
+START - POST - 1/3/2021, 10:29:56 PM - e0766128-fdb4-450a-8c6a-f4f7a2669516 - /feed
+Executing (default): INSERT INTO "FeedItem" ("id","caption","url","createdAt","updatedAt") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING *;
+END - POST - 1/3/2021, 10:29:56 PM - e0766128-fdb4-450a-8c6a-f4f7a2669516 - /feed
+START - GET - 1/3/2021, 10:30:55 PM - 7a839734-0437-4c06-bbf2-70c3c01066a8 - /feed
+Executing (default): SELECT count(*) AS "count" FROM "FeedItem" AS "FeedItem";
+Executing (default): SELECT "id", "caption", "url", "createdAt", "updatedAt" FROM "FeedItem" AS "FeedItem" ORDER BY "FeedItem"."id" DESC;
+END - GET - 1/3/2021, 10:30:55 PM - 7a839734-0437-4c06-bbf2-70c3c01066a8 - /feed
+START - GET - 1/3/2021, 10:38:25 PM - 4baa7930-4202-4cc8-b037-eac45668a3ae - /feed
+Executing (default): SELECT count(*) AS "count" FROM "FeedItem" AS "FeedItem";
+Executing (default): SELECT "id", "caption", "url", "createdAt", "updatedAt" FROM "FeedItem" AS "FeedItem" ORDER BY "FeedItem"."id" DESC;
+END - GET - 1/3/2021, 10:38:25 PM - 4baa7930-4202-4cc8-b037-eac45668a3ae - /feed
+START - GET - 1/3/2021, 10:38:28 PM - 832349d3-0b11-44cb-961d-e738b8e3dcad - /feed
+Executing (default): SELECT count(*) AS "count" FROM "FeedItem" AS "FeedItem";
+Executing (default): SELECT "id", "caption", "url", "createdAt", "updatedAt" FROM "FeedItem" AS "FeedItem" ORDER BY "FeedItem"."id" DESC;
+END - GET - 1/3/2021, 10:38:28 PM - 832349d3-0b11-44cb-961d-e738b8e3dcad - /feed
